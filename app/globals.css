@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  user-select: none;
+}
+
+.ci-internal-ldauvpw,
+.cl-userButtonPopoverFooter,
+.cl-internal-d50gl1 .cl-footer,
+.cl-internal-1dauvpw {
+  display: none;
+}
