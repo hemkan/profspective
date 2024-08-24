@@ -1,0 +1,154 @@
+{
+  "reviews": [
+    {
+      "professor": "Dr. Jane Smith",
+      "stars": 5,
+      "review": "Excellent teacher! Very engaging and knowledgeable.",
+      "subject": "Computer Science"
+    },
+    {
+      "professor": "Dr. John Doe",
+      "stars": 4,
+      "review": "Great lectures, but the assignments are a bit challenging.",
+      "subject": "Mathematics"
+    },
+    {
+      "professor": "Dr. Emily Davis",
+      "stars": 3,
+      "review": "Good subject knowledge, but the lectures are a bit dry.",
+      "subject": "Physics"
+    },
+    {
+      "professor": "Dr. Michael Brown",
+      "stars": 2,
+      "review": "Not very organized. Struggles to explain concepts clearly.",
+      "subject": "Chemistry"
+    },
+    {
+      "professor": "Dr. Sarah Wilson",
+      "stars": 5,
+      "review": "Fantastic professor with a lot of enthusiasm for the subject.",
+      "subject": "Biology"
+    },
+    {
+      "professor": "Dr. William Johnson",
+      "stars": 4,
+      "review": "Very knowledgeable and helpful, but grading can be strict.",
+      "subject": "Economics"
+    },
+    {
+      "professor": "Dr. Jessica Lee",
+      "stars": 3,
+      "review": "Decent teaching, but sometimes unresponsive to student questions.",
+      "subject": "History"
+    },
+    {
+      "professor": "Dr. David Martinez",
+      "stars": 4,
+      "review": "Engaging lectures and clear explanations, but could use more examples.",
+      "subject": "Engineering"
+    },
+    {
+      "professor": "Dr. Laura Thomas",
+      "stars": 2,
+      "review": "Not very approachable and the class was quite difficult.",
+      "subject": "Philosophy"
+    },
+    {
+      "professor": "Dr. Daniel Garcia",
+      "stars": 5,
+      "review": "Highly recommend! Very supportive and explains material well.",
+      "subject": "Psychology"
+    },
+    {
+      "professor": "Dr. Olivia Anderson",
+      "stars": 4,
+      "review": "Good professor with a clear teaching style, though the pace is fast.",
+      "subject": "Statistics"
+    },
+    {
+      "professor": "Dr. James Wilson",
+      "stars": 3,
+      "review": "Average teaching experience. The material is interesting but hard to follow.",
+      "subject": "Political Science"
+    },
+    {
+      "professor": "Dr. Megan Robinson",
+      "stars": 5,
+      "review": "Amazing lecturer who makes complex topics easy to understand.",
+      "subject": "Literature"
+    },
+    {
+      "professor": "Dr. Robert Young",
+      "stars": 4,
+      "review": "Good at explaining concepts, but the course load can be overwhelming.",
+      "subject": "Sociology"
+    },
+    {
+      "professor": "Dr. Amanda Walker",
+      "stars": 2,
+      "review": "Disorganized and often unprepared for lectures.",
+      "subject": "Art History"
+    },
+    {
+      "professor": "Dr. Charles Lewis",
+      "stars": 5,
+      "review": "Fantastic teacher with a lot of passion for the subject.",
+      "subject": "Geology"
+    },
+    {
+      "professor": "Dr. Barbara Allen",
+      "stars": 3,
+      "review": "Decent professor, but the lectures can be repetitive.",
+      "subject": "Linguistics"
+    },
+    {
+      "professor": "Dr. Richard Hall",
+      "stars": 4,
+      "review": "Well-structured course and clear explanations.",
+      "subject": "Music"
+    },
+    {
+      "professor": "Dr. Patricia Nelson",
+      "stars": 3,
+      "review": "Good knowledge, but sometimes lacks enthusiasm.",
+      "subject": "Anthropology"
+    },
+    {
+      "professor": "Dr. Steven Carter",
+      "stars": 5,
+      "review": "Incredible professor who is always available for help and feedback.",
+      "subject": "Mathematics"
+    },
+    {
+      "professor": "Dr. Karen Clark",
+      "stars": 4,
+      "review": "Great at making complex topics understandable, but assignments can be tough.",
+      "subject": "Computer Science"
+    },
+    {
+      "professor": "Dr. Karen Clark",
+      "stars": 5,
+      "review": "Great at making complex topics understandable, but assignments can be tough.",
+      "subject": "Computer Science"
+    },
+    {
+      "professor": "Dr. Karen Bro",
+      "stars": 4,
+      "review": "Great at making complex topics understandable, but assignments can be tough.",
+      "subject": "Computer Science"
+    },
+    {
+      "professor": "Dr. Karen Clark",
+      "stars": 4,
+      "review": "make complex topics understandable, but assignments can be tough.",
+      "subject": "Computer Science"
+    },
+    {
+      "professor": "Dr. Karen Clark",
+      "stars": 4,
+      "review": "",
+      "subject": "Historical Science"
+    }
+  ]
+}
