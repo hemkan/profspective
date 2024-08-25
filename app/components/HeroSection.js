@@ -85,6 +85,9 @@ export default function HeroSection() {
                   backgroundColor: "#6E6ADE",
                   borderRadius: "20px",
                   padding: "12px 24px",
+                  "&:hover": {
+                backgroundColor: "#6958AD",
+              },
                 }}
               >
                 Get Started
@@ -104,6 +107,9 @@ export default function HeroSection() {
                   borderColor: "#6E6ADE",
                   borderRadius: "20px",
                   padding: "12px 24px",
+                  "&:hover": {
+                borderColor: "#6958AD",
+              }
                 }}
               >
                 How It Works
