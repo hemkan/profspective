@@ -209,92 +209,8 @@ export default function ClassList() {
 
   return (
     <Container maxWidth="md">
+      {/* hiding this for when we implement classes by uni */}
       {/* <FormControl
-        fullWidth
-        sx={{
-          bgcolor: "#56468B",
-          borderRadius: 5,
-          marginBottom: "3rem",
-          fontFamily: "Righteous",
-        }}
-      >
-        {uni === "" && (
-          <InputLabel
-            id="select-uni"
-            sx={{
-              color: "#E0DFFE",
-              fontFamily: "Righteous",
-              borderRadius: 5,
-              padding: "0.5rem",
-            }}
-          >
-            University
-          </InputLabel>
-        )}
-
-        <Select
-          labelId="select-uni"
-          id="select"
-          value={uni}
-          label="University"
-          onChange={handleChange}
-          backgroundColor="#56468B"
-          sx={{
-            color: "#E0DFFE",
-            fontFamily: "Righteous",
-            borderRadius: 5,
-            padding: "0.5rem",
-            "& .MuiSelect-icon": {
-              color: "#E0DFFE",
-            },
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#56468B",
-            },
-            "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#E0DFFE",
-            },
-            // Style the dropdown menu background
-            "& .MuiSelect-select": {
-              bgcolor: "#56468B",
-            },
-            "& .MuiMenu-paper": {
-              bgcolor: "#56468B", // Background color for the dropdown menu
-            },
-          }}
-        >
-          <MenuItem
-            value={10}
-            sx={{
-              color: "#E0DFFE",
-              backgroundColor: "#56468B",
-              fontFamily: "Righteous",
-            }}
-          >
-            Ten
-          </MenuItem>
-          <MenuItem
-            value={20}
-            sx={{
-              color: "#E0DFFE",
-              backgroundColor: "#56468B",
-              fontFamily: "Righteous",
-            }}
-          >
-            Twenty
-          </MenuItem>
-          <MenuItem
-            value={30}
-            sx={{
-              color: "#E0DFFE",
-              backgroundColor: "#56468B",
-              fontFamily: "Righteous",
-            }}
-          >
-            Thirty
-          </MenuItem>
-        </Select>
-      </FormControl> */}
-      <FormControl
         fullWidth
         sx={{
           bgcolor: "#56468B",
@@ -338,17 +254,15 @@ export default function ClassList() {
             "&:hover .MuiOutlinedInput-notchedOutline": {
               borderColor: "#E0DFFE",
             },
-            "& .MuiSelect-select": {
-              bgcolor: "#56468B",
-            },
-            "& .MuiMenu-paper": {
-              bgcolor: "#56468B",
-            },
-            "& .MuiPaper-root": {
-              bgcolor: "#56468B",
-            },
-            "& .MuiList-root": {
-              bgcolor: "#56468B",
+          }}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                bgcolor: "#56468B",
+                "& .MuiList-root": {
+                  bgcolor: "#56468B",
+                },
+              },
             },
           }}
         >
@@ -360,7 +274,7 @@ export default function ClassList() {
               fontFamily: "Righteous",
             }}
           >
-            Ten
+            University of California, Berkeley
           </MenuItem>
           <MenuItem
             value={20}
@@ -370,7 +284,7 @@ export default function ClassList() {
               fontFamily: "Righteous",
             }}
           >
-            Twenty
+            University of Texas
           </MenuItem>
           <MenuItem
             value={30}
@@ -380,10 +294,10 @@ export default function ClassList() {
               fontFamily: "Righteous",
             }}
           >
-            Thirty
+            Massachusetts Institute of Technology
           </MenuItem>
         </Select>
-      </FormControl>
+      </FormControl> */}
 
       <Box
         display="flex"
