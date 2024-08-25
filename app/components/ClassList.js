@@ -11,7 +11,6 @@ import {
   setDoc,
   getDocs,
   deleteDoc,
-  updateDoc,
 } from "firebase/firestore";
 import db from "../../firebase";
 import {
@@ -33,6 +32,9 @@ import {
   DialogContentText,
   TextField,
   DialogActions,
+  FormControl,
+  InputLabel,
+  Select,
 } from "@mui/material";
 import { IoIosMore } from "react-icons/io";
 import { useRouter } from "next/navigation";
@@ -50,6 +52,7 @@ export default function ClassList() {
   const [dialogType, setDialogType] = useState("add"); // "add" or "rename"
   const [dialogTitle, setDialogTitle] = useState("Add Class");
   const [newName, setNewName] = useState("");
+  const [uni, setUni] = useState("");
 
   const router = useRouter();
 
@@ -143,6 +146,10 @@ export default function ClassList() {
     }
   };
 
+  const handleChange = (event) => {
+    setUni(event.target.value);
+  };
+
   const handleCloseSnackbar = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -202,6 +209,182 @@ export default function ClassList() {
 
   return (
     <Container maxWidth="md">
+      {/* <FormControl
+        fullWidth
+        sx={{
+          bgcolor: "#56468B",
+          borderRadius: 5,
+          marginBottom: "3rem",
+          fontFamily: "Righteous",
+        }}
+      >
+        {uni === "" && (
+          <InputLabel
+            id="select-uni"
+            sx={{
+              color: "#E0DFFE",
+              fontFamily: "Righteous",
+              borderRadius: 5,
+              padding: "0.5rem",
+            }}
+          >
+            University
+          </InputLabel>
+        )}
+
+        <Select
+          labelId="select-uni"
+          id="select"
+          value={uni}
+          label="University"
+          onChange={handleChange}
+          backgroundColor="#56468B"
+          sx={{
+            color: "#E0DFFE",
+            fontFamily: "Righteous",
+            borderRadius: 5,
+            padding: "0.5rem",
+            "& .MuiSelect-icon": {
+              color: "#E0DFFE",
+            },
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#56468B",
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#E0DFFE",
+            },
+            // Style the dropdown menu background
+            "& .MuiSelect-select": {
+              bgcolor: "#56468B",
+            },
+            "& .MuiMenu-paper": {
+              bgcolor: "#56468B", // Background color for the dropdown menu
+            },
+          }}
+        >
+          <MenuItem
+            value={10}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Ten
+          </MenuItem>
+          <MenuItem
+            value={20}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Twenty
+          </MenuItem>
+          <MenuItem
+            value={30}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Thirty
+          </MenuItem>
+        </Select>
+      </FormControl> */}
+      <FormControl
+        fullWidth
+        sx={{
+          bgcolor: "#56468B",
+          borderRadius: 5,
+          marginBottom: "3rem",
+          fontFamily: "Righteous",
+        }}
+      >
+        {uni === "" && (
+          <InputLabel
+            id="select-uni"
+            sx={{
+              color: "#E0DFFE",
+              fontFamily: "Righteous",
+              borderRadius: 5,
+              padding: "0.5rem",
+            }}
+          >
+            University
+          </InputLabel>
+        )}
+
+        <Select
+          labelId="select-uni"
+          id="select"
+          value={uni}
+          label="University"
+          onChange={handleChange}
+          sx={{
+            color: "#E0DFFE",
+            fontFamily: "Righteous",
+            borderRadius: 5,
+            padding: "0.5rem",
+            bgcolor: "#56468B",
+            "& .MuiSelect-icon": {
+              color: "#E0DFFE",
+            },
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#56468B",
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#E0DFFE",
+            },
+            "& .MuiSelect-select": {
+              bgcolor: "#56468B",
+            },
+            "& .MuiMenu-paper": {
+              bgcolor: "#56468B",
+            },
+            "& .MuiPaper-root": {
+              bgcolor: "#56468B",
+            },
+            "& .MuiList-root": {
+              bgcolor: "#56468B",
+            },
+          }}
+        >
+          <MenuItem
+            value={10}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Ten
+          </MenuItem>
+          <MenuItem
+            value={20}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Twenty
+          </MenuItem>
+          <MenuItem
+            value={30}
+            sx={{
+              color: "#E0DFFE",
+              backgroundColor: "#56468B",
+              fontFamily: "Righteous",
+            }}
+          >
+            Thirty
+          </MenuItem>
+        </Select>
+      </FormControl>
+
       <Box
         display="flex"
         flexDirection={"row"}
