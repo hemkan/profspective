@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 const Message = ({ message }) => {
   return (
+    // Display Message Box
     <Box
       sx={{
         borderRadius: 2,

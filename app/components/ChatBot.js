@@ -16,6 +16,7 @@ import { ThreeDots } from "react-loader-spinner";
 import { IoClose } from "react-icons/io5";
 
 const ChatBot = () => {
+  //Add State variables
   const [apiLoading, setApiLoading] = useState(false);
   const {
     messages,
@@ -30,6 +31,7 @@ const ChatBot = () => {
     onResponse: () => setApiLoading(false),
   });
 
+  //Handle Submit Button
   const submitMessage = (inputMessage) => {
     if (input.trim() != "") {
       setApiLoading(true);
@@ -50,6 +52,7 @@ const ChatBot = () => {
         backgroundColor: "#13131e",
       }}
     >
+      {/* Header from the chatbot */}
       <Box sx={{ paddingX: "15px" }}>
         <Stack direction="row" alignItems="center">
           <Typography
@@ -64,6 +67,7 @@ const ChatBot = () => {
           >
             Profspective Bot
           </Typography>
+          {/* Close Chatbot */}
           <IoClose
             style={{
               width: "25px",
@@ -78,6 +82,7 @@ const ChatBot = () => {
         />
       </Box>
 
+      {/* Messages Display */}
       <Box
         flexGrow={1}
         overflow="hidden"
@@ -110,6 +115,7 @@ const ChatBot = () => {
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
+          {/* Loading Symbol if Api is Loading */}
           {apiLoading && (
             <Box
               sx={{
@@ -135,6 +141,7 @@ const ChatBot = () => {
         </Stack>
       </Box>
 
+      {/* Message Sending Feature */}
       <Stack
         direction="row"
         alignItems="center"
@@ -146,6 +153,7 @@ const ChatBot = () => {
           borderRadius: "16px",
         }}
       >
+        {/* Message Input */}
         <TextField
           disabled={isLoading}
           fullWidth
@@ -171,6 +179,7 @@ const ChatBot = () => {
             },
           }}
         />
+        {/* Submit Button */}
         <IconButton
           type="submit"
           aria-label="Send message"
