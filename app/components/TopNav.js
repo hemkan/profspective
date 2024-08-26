@@ -148,7 +148,7 @@ export default function TopNav() {
                     fontFamily: "Righteous",
                     padding: "0 10px",
                     "&:hover": {
-                      backgroundColor: "#FFD700",
+                      backgroundColor: "#6958AD",
                       boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
                     },
                   }}

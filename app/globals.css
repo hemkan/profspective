@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,8 +11,8 @@ html {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  scrollbar-width: none; 
-  background-color: #13131E;
+  scrollbar-width: none;
+  background-color: #13131e;
 }
 
 .ci-internal-ldauvpw,
