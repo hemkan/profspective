@@ -15,6 +15,8 @@ export default function RootLayout({ children }) {
       appearance={{
         baseTheme: shadesOfPurple,
       }}
+      signInFallbackRedirectUrl={"/classes"}
+      signUpFallbackRedirectUrl={"/classes"}
     >
       <html lang="en">
         <body className={inter.className}>{children}</body>

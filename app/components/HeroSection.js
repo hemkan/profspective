@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { Box, Button, Typography, Container } from "@mui/material";
 import Link from "next/link";
 import Lottie from "lottie-react";
@@ -72,7 +72,7 @@ export default function HeroSection() {
               gap: "16px",
             }}
           >
-            <Link href="/">
+            <Link href="/sign-up">
               <Button
                 variant="contained"
                 sx={{
@@ -86,14 +86,16 @@ export default function HeroSection() {
                   borderRadius: "20px",
                   padding: "12px 24px",
                   "&:hover": {
-                backgroundColor: "#6958AD",
-              },
+                    backgroundColor: "#6958AD",
+                  },
                 }}
               >
                 Get Started
               </Button>
             </Link>
-            <Link href="/">
+
+            {/* commenting this out until we have a completed landing page */}
+            {/* <Link href="/">
               <Button
                 variant="outlined"
                 color="primary"
@@ -108,13 +110,13 @@ export default function HeroSection() {
                   borderRadius: "20px",
                   padding: "12px 24px",
                   "&:hover": {
-                borderColor: "#6958AD",
-              }
+                    borderColor: "#6958AD",
+                  },
                 }}
               >
                 How It Works
               </Button>
-            </Link>
+            </Link> */}
           </Box>
         </Box>
         <Box
