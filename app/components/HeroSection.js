@@ -1,5 +1,5 @@
 "use client";
-import React, { use } from "react";
+import React from "react";
 import { Box, Button, Typography, Container } from "@mui/material";
 import Link from "next/link";
 import Lottie from "lottie-react";
@@ -13,17 +13,18 @@ export default function HeroSection() {
           display: "flex",
           flexDirection: {
             xs: "column", // Stack elements vertically on small screens
-            sm: "row", // Arrange elements horizontally on medium and larger screens
+            md: "row", // Arrange elements horizontally on medium and larger screens
           },
           alignItems: "center",
           justifyContent: "space-evenly",
           padding: "40px 20px",
           backgroundColor: "#13131E",
-          height: "80vh",
+          // height: "80vh",
           textAlign: {
             xs: "center", // Center text on small screens
-            sm: "left", // Align text to the left on larger screens
+            md: "left", // Align text to the left on larger screens
           },
+          overflow: "hidden",
         }}
       >
         <Box
@@ -37,7 +38,7 @@ export default function HeroSection() {
             sx={{
               fontSize: {
                 xs: "28px", // Font size for small screens
-                sm: "40px", // Font size for larger screens
+                md: "40px", // Font size for larger screens
               },
               fontWeight: "bold",
               marginBottom: "16px",
@@ -52,7 +53,7 @@ export default function HeroSection() {
             sx={{
               fontSize: {
                 xs: "16px", // Font size for small screens
-                sm: "18px", // Font size for larger screens
+                md: "18px", // Font size for larger screens
                 color: "#FFFFFF",
               },
               marginBottom: "32px",
@@ -67,7 +68,7 @@ export default function HeroSection() {
               display: "flex",
               flexDirection: {
                 xs: "column", // Stack buttons vertically on small screens
-                sm: "row", // Arrange buttons horizontally on larger screens
+                md: "row", // Arrange buttons horizontally on larger screens
               },
               gap: "16px",
             }}
@@ -79,7 +80,7 @@ export default function HeroSection() {
                   fontFamily: "Righteous",
                   fontSize: {
                     xs: "14px",
-                    sm: "16px",
+                    md: "16px",
                     color: "#E0DFFE",
                   },
                   backgroundColor: "#6E6ADE",
@@ -125,6 +126,7 @@ export default function HeroSection() {
             width: "500px",
             height: "500px", // Set a fixed height for the image container
             maxWidth: "500px", // Set a max width for the image container
+            overflow: "hidden",
           }}
         >
           <div style={{ transform: "scale(1.4)", transformOrigin: "center" }}>

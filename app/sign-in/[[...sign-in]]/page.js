@@ -21,13 +21,13 @@ export default function SignUpPage() {
           display: "flex",
           flexDirection: {
             xs: "column", // Stack items vertically on extra-small screens
-            sm: "row",    // Arrange items horizontally on small screens and above
+            sm: "row", // Arrange items horizontally on small screens and above
           },
           alignItems: "center",
           justifyContent: "center",
           padding: {
-            xs: "20px",  // Reduce padding on extra-small screens
-            sm: "40px",  // Increase padding on small screens and above
+            xs: "20px", // Reduce padding on extra-small screens
+            sm: "40px", // Increase padding on small screens and above
           },
           margin: "0 auto", // Center the container horizontally
           maxWidth: "1200px", // Optional: Set a max-width for better readability
@@ -44,11 +44,11 @@ export default function SignUpPage() {
             textAlign: "center",
             paddingRight: {
               sm: "40px", // Add padding between text/image and the sign-in form on larger screens
-              xs: "0",    // Remove padding on extra-small screens
+              xs: "0", // Remove padding on extra-small screens
             },
             marginBottom: {
               xs: "20px", // Add margin at the bottom for small screens
-              sm: "0",    // Remove margin on larger screens
+              sm: "0", // Remove margin on larger screens
             },
           }}
         >
@@ -79,9 +79,9 @@ export default function SignUpPage() {
             flex: 1,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "flex-start",
             minHeight: "500px", // Adjust the height for larger screens
-            width: "100%",    // Ensure the box takes full width
+            width: "100%", // Ensure the box takes full width
           }}
         >
           <SignIn />

@@ -25,3 +25,7 @@ html {
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge, and Opera */
 }
+
+.css-1cquy07 {
+  align-items: flex-start;
+}

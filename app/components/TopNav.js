@@ -32,7 +32,7 @@ export default function TopNav() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
-    }, 50); 
+    }, 50);
 
     return () => clearTimeout(timer);
   }, []);
@@ -109,14 +109,18 @@ export default function TopNav() {
         {isMobile ? (
           <>
             <IconButton
-              edge="end"
+              // edge="end"
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer(true)}
             >
               <MenuIcon sx={{ color: "#E0DFFE" }} />
             </IconButton>
-            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+            <Drawer
+              anchor="right"
+              open={drawerOpen}
+              onClose={toggleDrawer(false)}
+            >
               {drawerContent}
             </Drawer>
           </>

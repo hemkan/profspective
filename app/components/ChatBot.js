@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Box,
   Typography,
@@ -13,11 +13,16 @@ import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
 import { useChat } from "ai/react";
 import { ThreeDots } from "react-loader-spinner";
-import { IoClose } from "react-icons/io5";
+import CloseIcon from "@mui/icons-material/Close";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const ChatBot = () => {
+const ChatBot = ({ closeChat }) => {
   //Add State variables
+  const chatInput = useRef(null);
+  const messageRef = useRef(null);
+  const messageContainerRef = useRef(null);
   const [apiLoading, setApiLoading] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
   const {
     messages,
     input,
@@ -31,9 +36,43 @@ const ChatBot = () => {
     onResponse: () => setApiLoading(false),
   });
 
+  //Focus on the chat input
+  useEffect(() => {
+    if (!isLoading) {
+      chatInput.current?.querySelector("textarea:first-child")?.focus();
+    }
+  }, [isLoading]);
+
+  //Auto Scroll when Messages is changed
+  useEffect(() => {
+    const { scrollHeight, scrollTop, offsetHeight } =
+      messageContainerRef.current;
+    if (scrollHeight >= scrollTop + offsetHeight) {
+      messageContainerRef.current?.scrollTo({
+        top: scrollHeight,
+        // behavior: "smooth",
+      });
+    }
+  }, [messages]);
+
+  //Show Scroll Button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (messageContainerRef.current) {
+        const { scrollHeight, scrollTop, offsetHeight } =
+          messageContainerRef.current;
+        setShowScroll(scrollHeight - 70 >= scrollTop + offsetHeight);
+      }
+    };
+
+    messageContainerRef.current?.addEventListener("scroll", handleScroll);
+    return () =>
+      messageContainerRef.current?.removeEventListener("scroll", handleScroll);
+  }, []);
+
   //Handle Submit Button
   const submitMessage = (inputMessage) => {
-    if (input.trim() != "") {
+    if (inputMessage.trim() != "") {
       setApiLoading(true);
       handleSubmit();
     }
@@ -43,13 +82,12 @@ const ChatBot = () => {
     <Stack
       direction="column"
       sx={{
-        maxWidth: "350px",
-        width: "100%",
-        maxHeight: "550px",
-        height: "100%",
+        width: { xs: "100vw", sm: "425px" },
+        height: "550px",
         paddingY: "25px",
-        borderRadius: "20px",
+        borderRadius: { xs: "0px", sm: "20px" },
         backgroundColor: "#13131e",
+        overflow: "hidden",
       }}
     >
       {/* Header from the chatbot */}
@@ -68,13 +106,18 @@ const ChatBot = () => {
             Profspective Bot
           </Typography>
           {/* Close Chatbot */}
-          <IoClose
-            style={{
+          <CloseIcon
+            sx={{
               width: "25px",
               height: "25px",
               color: "#3D3E82",
               marginTop: "-10px",
+              cursor: "pointer",
+              ":hover": {
+                color: "#fff",
+              },
             }}
+            onClick={closeChat}
           />
         </Stack>
         <Divider
@@ -90,6 +133,7 @@ const ChatBot = () => {
         padding="12px 15px 8px"
       >
         <Stack
+          ref={messageContainerRef}
           direction="column"
           gap="16px"
           paddingX="8px"
@@ -138,7 +182,32 @@ const ChatBot = () => {
               />
             </Box>
           )}
+          <div ref={messageRef}></div>
         </Stack>
+
+        {showScroll && (
+          <IconButton
+            sx={{
+              position: "absolute",
+              bottom: "10px",
+              right: "30px",
+              // right: "50%",
+              // transform: "translateX(50%)",
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              color: "rgb(61, 62, 130)",
+              borderRadius: "50%",
+              "&:hover": {
+                backgroundColor: "white",
+              },
+              boxShadow: "0 0 2px white",
+            }}
+            onClick={() => {
+              messageRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <KeyboardArrowDownIcon />
+          </IconButton>
+        )}
       </Box>
 
       {/* Message Sending Feature */}
@@ -155,14 +224,18 @@ const ChatBot = () => {
       >
         {/* Message Input */}
         <TextField
+          ref={chatInput}
           disabled={isLoading}
           fullWidth
           variant="outlined"
           placeholder="Enter Text"
           size="small"
-          value={input}
+          multiline
+          maxRows={3}
+          value={isLoading ? "Loading..." : input}
           onKeyDown={(event) => {
-            if (event.key == "Enter" && !event.shiftKey) {
+            if (event.key === "Enter" && !event.shiftKey) {
+              event.preventDefault();
               submitMessage(input);
             }
           }}
@@ -171,6 +244,23 @@ const ChatBot = () => {
             flexGrow: "1",
             "& .MuiInputBase-input": {
               color: "#FFF",
+              "&::-webkit-scrollbar": {
+                width: "3px",
+              },
+              "&::-webkit-scrollbar-track": {
+                backgroundColor: "#f1f1f1",
+                borderRadius: "10px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#c1c1c1",
+                borderRadius: "10px",
+                "&:hover": {
+                  backgroundColor: "#a1a1a1",
+                },
+              },
+            },
+            "& .MuiInputBase-input.Mui-disabled": {
+              WebkitTextFillColor: "rgba(255, 255, 255, 0.6)",
             },
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
