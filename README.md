@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/2a3c19aa-e79b-4ad6-8687-88b3ee0cf709)
+
 # ProfSpective
 
 Welcome to **ProfSpective** – an application designed to provide feedback about professors based on ratings from students who have taken their classes. With our app, you can get recommendations for classes and find out how professors are rated by their students.
